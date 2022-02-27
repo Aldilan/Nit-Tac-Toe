@@ -119,19 +119,90 @@
 
     }
 
-    .report {
-        width: 40px;
-        height: 40px;
+    .reportPage {
         position: fixed;
-        left: 94%;
-        top: 7vh;
-        z-index: 4;
+        z-index: 5;
+        top: 0;
+        left: 70%;
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        color: #009DAE;
+        transition: 1s;
     }
 
-    .report img{
+    .reportPageSlide {
+        left: 98%;
+    }
+
+    .reportPageLeft {
+        width: 70px;
+        height: 70px;
+        padding: 10px;
+        position: relative;
+        z-index: 6;
+        margin-right: -2%;
+        margin-top: 40vh;
+        border: 5px double #71DFE7;
+        background-color: #009DAE;
+        border-radius: 25px;
+        transition: 0.5s;
+    }
+
+    .reportPageButtonHover:hover {
+        margin-left: -3%;
+    }
+
+    .reportPageLeft img {
         width: 40px;
         height: 40px;
         cursor: pointer;
+    }
+
+    .reportPageRight {
+        width: 30%;
+        background-color: #C2FFF9;
+        border: 5px double #71DFE7;
+    }
+
+    .reportPageRight h1 {
+        margin-top: 10vh;
+        font-size: 50px;
+        margin-bottom: 3vh;
+    }
+
+    .reportPageRight span {
+        font-size: 15px;
+    }
+
+    .reportPageRight ul{
+        list-style: none;
+    }
+
+    .reportPageRight ul li {
+        margin-top: 5vh;
+    }
+
+    .reportPageRight ul li:first-child {
+        margin-top: 10vh;
+    }
+
+    .reportPageRight ul li:last-child {
+        margin-top: 40vh;
+        font-size: 10px;
+    }
+
+    .reportPageRight ul li a {
+        text-decoration: none;
+        color: #009DAE;
+        font-size: 25px;
+        transition: 0.5s;
+    }
+
+    .reportPageRight ul li a:hover{
+        color: white;
+        text-shadow: 0px 0px 15px white;
     }
 
     .menu {
