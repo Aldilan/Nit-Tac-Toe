@@ -7,7 +7,10 @@ const player2 = document.getElementById('player2')
 const coloums = document.querySelectorAll('.contain table tr td img')
 const reset = document.querySelector('.contain button')
 const resultGame = document.querySelector('.resultGame')
+const resultWhosWinner = document.querySelector('.result ul li span')
 const closeResult = document.querySelector('.result ul li button')
+const scoreP = document.getElementById('score1')
+const scoreC = document.getElementById('score2')
 const gameOver = document.querySelector('.gameOver')
 
 modes.forEach(function (mode) {
@@ -31,6 +34,87 @@ menu.addEventListener('click', function (e) {
     modeMenu.classList.remove('slideMode')
 })
 
+function clearAll() {
+    coloums.forEach(function (coloumClean) {
+        coloumClean.setAttribute('src','')
+        coloumClean.setAttribute('id','')
+        coloumClean.classList.add('op0')
+    })
+    gameOver.classList.add('displayNone')
+}
+
+function countScores() {
+    if (resultWhosWinner.textContent == 'Player Win') {
+        newScoresP = parseInt(scoreP.textContent)
+        newScoresP += 1
+        scoreP.innerHTML=newScoresP
+    }else if (resultWhosWinner.textContent == 'Computer Win') {
+        newScoresC = parseInt(scoreC.textContent)
+        newScoresC += 1
+        scoreC.innerHTML=newScoresC
+    }else {
+    }
+}
+
+function end() {
+    resultGame.classList.remove('displayNone')
+    gameOver.classList.remove('displayNone')
+    countScores()
+}
+
+function resultWinner() {
+    if (coloums[0].getAttribute('src') === 'assets/img/info.png' && coloums[1].getAttribute('src') === 'assets/img/info.png' && coloums[2].getAttribute('src') === 'assets/img/info.png') {
+        resultWhosWinner.innerHTML='Player Win'
+        end()
+    }else if (coloums[3].getAttribute('src') === 'assets/img/info.png' && coloums[4].getAttribute('src') === 'assets/img/info.png' && coloums[5].getAttribute('src') === 'assets/img/info.png') {
+        resultWhosWinner.innerHTML='Player Win'
+        end()
+    }else if (coloums[6].getAttribute('src') === 'assets/img/info.png' && coloums[7].getAttribute('src') === 'assets/img/info.png' && coloums[8].getAttribute('src') === 'assets/img/info.png') {
+        resultWhosWinner.innerHTML='Player Win'
+        end()
+    }else if (coloums[0].getAttribute('src') === 'assets/img/info.png' && coloums[3].getAttribute('src') === 'assets/img/info.png' && coloums[6].getAttribute('src') === 'assets/img/info.png') {
+        resultWhosWinner.innerHTML='Player Win'
+        end()
+    }else if (coloums[1].getAttribute('src') === 'assets/img/info.png' && coloums[4].getAttribute('src') === 'assets/img/info.png' && coloums[7].getAttribute('src') === 'assets/img/info.png') {
+        resultWhosWinner.innerHTML='Player Win'
+        end()
+    }else if (coloums[2].getAttribute('src') === 'assets/img/info.png' && coloums[5].getAttribute('src') === 'assets/img/info.png' && coloums[8].getAttribute('src') === 'assets/img/info.png') {
+        resultWhosWinner.innerHTML='Player Win'
+        end()
+    }else if (coloums[0].getAttribute('src') === 'assets/img/info.png' && coloums[4].getAttribute('src') === 'assets/img/info.png' && coloums[8].getAttribute('src') === 'assets/img/info.png') {
+        resultWhosWinner.innerHTML='Player Win'
+        end()
+    }else if (coloums[2].getAttribute('src') === 'assets/img/info.png' && coloums[4].getAttribute('src') === 'assets/img/info.png' && coloums[6].getAttribute('src') === 'assets/img/info.png') {
+        resultWhosWinner.innerHTML='Player Win'
+        end()
+    }else if (coloums[0].getAttribute('src') === 'assets/img/menu.png' && coloums[1].getAttribute('src') === 'assets/img/menu.png' && coloums[2].getAttribute('src') === 'assets/img/menu.png') {      
+        resultWhosWinner.innerHTML='Computer Win'
+        end()
+    }else if (coloums[3].getAttribute('src') === 'assets/img/menu.png' && coloums[4].getAttribute('src') === 'assets/img/menu.png' && coloums[5].getAttribute('src') === 'assets/img/menu.png') {
+        resultWhosWinner.innerHTML='Computer Win'
+        end()
+    }else if (coloums[6].getAttribute('src') === 'assets/img/menu.png' && coloums[7].getAttribute('src') === 'assets/img/menu.png' && coloums[8].getAttribute('src') === 'assets/img/menu.png') {
+        resultWhosWinner.innerHTML='Computer Win'
+        end()
+    }else if (coloums[0].getAttribute('src') === 'assets/img/menu.png' && coloums[3].getAttribute('src') === 'assets/img/menu.png' && coloums[6].getAttribute('src') === 'assets/img/menu.png') {
+        resultWhosWinner.innerHTML='Computer Win'
+        end()
+    }else if (coloums[1].getAttribute('src') === 'assets/img/menu.png' && coloums[4].getAttribute('src') === 'assets/img/menu.png' && coloums[7].getAttribute('src') === 'assets/img/menu.png') {
+        resultWhosWinner.innerHTML='Computer Win'
+        end()
+    }else if (coloums[2].getAttribute('src') === 'assets/img/menu.png' && coloums[5].getAttribute('src') === 'assets/img/menu.png' && coloums[8].getAttribute('src') === 'assets/img/menu.png') {
+        resultWhosWinner.innerHTML='Computer Win'
+        end()
+    }else if (coloums[0].getAttribute('src') === 'assets/img/menu.png' && coloums[4].getAttribute('src') === 'assets/img/menu.png' && coloums[8].getAttribute('src') === 'assets/img/menu.png') {
+        resultWhosWinner.innerHTML='Computer Win'
+        end()
+    }else if (coloums[2].getAttribute('src') === 'assets/img/menu.png' && coloums[4].getAttribute('src') === 'assets/img/menu.png' && coloums[6].getAttribute('src') === 'assets/img/menu.png') {
+        resultWhosWinner.innerHTML='Computer Win'
+        end()
+    }else{
+    }
+}
+
 coloums.forEach(function (coloum) {
     coloum.addEventListener('click', function (e) {
         if (e.target.getAttribute('id') !== 'done') {
@@ -50,7 +134,7 @@ coloums.forEach(function (coloum) {
                             botDone = 'belum'
                         }else{
                             coloums[i-1].setAttribute('id','done')
-                            coloums[i-1].setAttribute('src','assets/img/info.png')
+                            coloums[i-1].setAttribute('src','assets/img/menu.png')
                             coloums[i-1].classList.remove('op0')
                             botDone = 'udah'
                         }
@@ -62,12 +146,12 @@ coloums.forEach(function (coloum) {
                 if (coloums[j].getAttribute('id') == 'done') {
                     coloumResult += 1
                     if (coloumResult == 8) {
-                        resultGame.classList.remove('displayNone')
-                        gameOver.classList.remove('displayNone')
+                        resultWhosWinner.innerHTML = 'Draw'
+                        end()
                     }
                 }
             }
-            console.log(coloumResult)
+            resultWinner()
         }else {
 
         }
@@ -75,15 +159,7 @@ coloums.forEach(function (coloum) {
 })
 
 reset.addEventListener('click', function (e) {
-    coloums.forEach(function (coloumReset) {
-        if (coloumReset.getAttribute('id') == 'done') {
-            coloumReset.setAttribute('id', '')
-            
-        }
-        gameOver.classList.add('displayNone')
-        coloumReset.classList.remove('done')
-        coloumReset.classList.add('op0')
-    })
+    clearAll()
 })
 
 closeResult.addEventListener('click',function (e) {
