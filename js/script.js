@@ -2,6 +2,7 @@ const sidebarButton = document.querySelector('.reportPageLeft img')
 const sidebar = document.querySelector('.reportPage')
 const modeMenu = document.querySelector('.chooseMode')
 const modes = document.querySelectorAll('.chooseMode ul li a')
+const backMenu = document.getElementById('backMenu')
 const menu = document.querySelector('.menu img')
 const hContain = document.getElementById('headerContain')
 const player1 = document.getElementById('player1')
@@ -12,33 +13,54 @@ const resultGame = document.querySelector('.resultGame')
 const resultWhosWinner = document.querySelector('.result ul li span')
 const closeResult = document.querySelector('.result ul li button')
 const scoreP = document.getElementById('score1')
+const whosTurn = document.getElementById('whosTurn')
 const scoreC = document.getElementById('score2')
 const gameOver = document.querySelector('.gameOver')
 
 sidebarButton.addEventListener('click', function (e) {
     e.target.parentElement.classList.toggle('reportPageButtonHover')
     sidebar.classList.toggle('reportPageSlide')
+    sidebarButton.classList.toggle('sidebarButtonRotate')
 })
 
 modes.forEach(function (mode) {
     mode.addEventListener('click', function (e) {
         e.preventDefault()
         if (e.target.textContent == 'Multiplayer') {
+            if (hContain.textContent != 'Multiplayer') {
+                modeMenu.classList.add('slideMode')
+                hContain.innerHTML = e.target.textContent
+                scoreP.innerHTML = '0'
+                scoreC.innerHTML = '0'
+                clearAll()
+                player1.innerHTML = 'Player 1'
+                player2.innerHTML = 'Player 2'
+                whosTurn.innerHTML = 'Player 1 turn'
+            }else{
+                modeMenu.classList.add('slideMode')
+            }
+        }else if (e.target.textContent == 'Single Player'){
+            if (hContain.textContent != 'Single Player') {
+                modeMenu.classList.add('slideMode')
+                hContain.innerHTML = e.target.textContent
+                scoreP.innerHTML = '0'
+                scoreC.innerHTML = '0'
+                clearAll()
+                player1.innerHTML = 'You'
+                player2.innerHTML = 'Com'
+                whosTurn.innerHTML = 'Your turn'
+            }else{
+                modeMenu.classList.add('slideMode')
+            }
+        }else {
             modeMenu.classList.add('slideMode')
-            hContain.innerHTML = e.target.textContent
-            player1.innerHTML = 'Player 1'
-            player2.innerHTML = 'Player 2'
-        }else{
-            modeMenu.classList.add('slideMode')
-            hContain.innerHTML = e.target.textContent
-            player1.innerHTML = 'You'
-            player2.innerHTML = 'Computer'
         }
     })
 })
 
 menu.addEventListener('click', function (e) {
     modeMenu.classList.remove('slideMode')
+    backMenu.classList.remove('displayNone')
 })
 
 function clearAll() {
@@ -63,9 +85,15 @@ function countScores() {
     }
 }
 
+function waitButtonClose() {
+    closeResult.innerHTML = 'Close'
+    gameOver.classList.remove('displayNone')
+    closeResult.disabled=false
+}
+
 function end() {
     resultGame.classList.remove('displayNone')
-    gameOver.classList.remove('displayNone')
+    setTimeout(waitButtonClose,10000)
     countScores()
 }
 
@@ -122,6 +150,46 @@ function resultWinner() {
     }
 }
 
+function botTurn() {
+    if (hContain.textContent == 'Single Player') {
+        whosTurn.innerHTML = 'Your Turn'
+    }else{
+        whosTurn.innerHTML = 'Player 1 turn'
+    }
+    gameOver.classList.add('displayNone')
+    let botDone = 'belum'
+    while (botDone == 'belum') {
+        valBot = 10
+        while (valBot == 0 || valBot == 10) {
+            valBot = Math.round(Math.random()*10)
+        }
+        for (let i = 1; i < coloums.length; i++) {
+            if (i == valBot) {
+                if (coloums[i-1].getAttribute('id') == 'done') {
+                    botDone = 'belum'
+                }else{
+                    coloums[i-1].setAttribute('id','done')
+                    coloums[i-1].setAttribute('src','assets/img/x.png')
+                    coloums[i-1].classList.remove('op0')
+                    botDone = 'udah'
+                }
+            }
+        }
+        let coloumResult = 0
+        for (let j = 0; j < coloums.length; j++) {
+            if (coloums[j].getAttribute('id') == 'done') {
+                coloumResult += 1
+                if (coloumResult == 8) {
+                    if (resultGame.getAttribute('class') == 'resultGame displayNone') {
+                        resultWhosWinner.innerHTML = 'Draw'
+                        end()
+                    }
+                }
+            }
+        }
+    }
+}
+
 coloums.forEach(function (coloum) {
     coloum.addEventListener('click', function (e) {
         if (e.target.getAttribute('id') !== 'done') {
@@ -129,36 +197,18 @@ coloums.forEach(function (coloum) {
             e.target.setAttribute('src', 'assets/img/o.png')
             e.target.classList.remove('op0')
 
-            let botDone = 'belum'
-            while (botDone == 'belum') {
-                valBot = 10
-                while (valBot == 0 || valBot == 10) {
-                    valBot = Math.round(Math.random()*10)
-                }
-                for (let i = 1; i < coloums.length; i++) {
-                    if (i == valBot) {
-                        if (coloums[i-1].getAttribute('id') == 'done') {
-                            botDone = 'belum'
-                        }else{
-                            coloums[i-1].setAttribute('id','done')
-                            coloums[i-1].setAttribute('src','assets/img/x.png')
-                            coloums[i-1].classList.remove('op0')
-                            botDone = 'udah'
-                        }
-                    }
-                }
+            if (hContain.textContent == 'Single Player') {
+                whosTurn.innerHTML = 'Com Turn'
+            }else{
+                whosTurn.innerHTML = 'Player 2 turn'
             }
-            let coloumResult = 0
-            for (let j = 0; j < coloums.length; j++) {
-                if (coloums[j].getAttribute('id') == 'done') {
-                    coloumResult += 1
-                    if (coloumResult == 8) {
-                        resultWhosWinner.innerHTML = 'Draw'
-                        end()
-                    }
-                }
-            }
+
             resultWinner()
+
+            gameOver.classList.remove('displayNone')
+            let botTurnTime = Math.round(Math.random()*10000)
+            setTimeout(botTurn,botTurnTime)
+
         }else {
 
         }
@@ -167,8 +217,16 @@ coloums.forEach(function (coloum) {
 
 reset.addEventListener('click', function (e) {
     clearAll()
+    if (hContain.textContent = 'Single Player') {
+        whosTurn.innerHTML = 'Your turn'
+    }else{
+        whosTurn.innerHTML = 'Player 1 turn'
+    }
 })
 
 closeResult.addEventListener('click',function (e) {
     resultGame.classList.add('displayNone')
+    closeResult.innerHTML = 'Wait..'
+    closeResult.disabled = true
+    whosTurn.innerHTML = resultWhosWinner.textContent
 })

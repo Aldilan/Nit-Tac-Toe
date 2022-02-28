@@ -11,9 +11,10 @@
 
     <div class="container">
         <div class="contain">
-            <h1 id="headerContain">Single Player</h1>
+            <h1 id="headerContain">Mode</h1>
             <div class="score">
                 <span><p id="player1">You</p><p id="score1">0</p></span>
+                <span id="whosTurn">Who's turn?</span>
                 <span><p id="player2">Bot</p><p id="score2">0</p></span>
             </div>
             <table>
@@ -41,7 +42,7 @@
                 <ul>
                     <li><h1>GAME IS OVER</h1></li>
                     <li><span>Player 1 win</span></li>
-                    <li><button>Close</button></li>
+                    <li><button disabled>Wait...</button></li>
                 </ul>
             </div>
         </div>
@@ -50,11 +51,12 @@
             <ul>
                 <li><a href="">Single Player</a></li>
                 <li><a href="">Multiplayer</a></li>
+                <li id="backMenu" class="displayNone"><a href="">Back</a></li>
             </ul>
         </div>
         <div class="reportPage reportPageSlide">
             <div class="reportPageLeft reportPageButtonHover">
-                <img src="assets/img/x.png" alt="">
+                <img src="assets/img/arrow.png" alt="">
             </div>
             <div class="reportPageRight">
                 <h1>Nit Tac Toe</h1>
@@ -70,6 +72,13 @@
         <div class="menu">
             <img src="assets/img/menu.png" alt="">
         </div>
+    </div>
+
+    <div class="attentionForMobileUser">
+        <ul>
+            <li><h1>For now, this application can only be accessed for devices with a resolution of 1024px - 1600px and landscape</h1></li>
+            <li><span>Stay tuned for next update</span></li>
+        </ul>
     </div>
     
     <script src="js/script.js"></script>
