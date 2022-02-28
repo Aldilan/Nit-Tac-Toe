@@ -73,15 +73,30 @@ function clearAll() {
 }
 
 function countScores() {
-    if (resultWhosWinner.textContent == 'Player Win') {
-        newScoresP = parseInt(scoreP.textContent)
-        newScoresP += 1
-        scoreP.innerHTML=newScoresP
-    }else if (resultWhosWinner.textContent == 'Computer Win') {
-        newScoresC = parseInt(scoreC.textContent)
-        newScoresC += 1
-        scoreC.innerHTML=newScoresC
-    }else {
+    if (hContain.textContent == 'Single Player') {
+        if (resultWhosWinner.textContent == 'Player Win') {
+            newScoresP = parseInt(scoreP.textContent)
+            newScoresP += 1
+            scoreP.innerHTML=newScoresP
+        }else if (resultWhosWinner.textContent == 'Computer Win') {
+            newScoresC = parseInt(scoreC.textContent)
+            newScoresC += 1
+            scoreC.innerHTML=newScoresC
+        }else {
+        }
+    }else if (hContain.textContent == 'Multiplayer') {
+        if (resultWhosWinner.textContent == 'Player 1 Win') {
+            newScoresP = parseInt(scoreP.textContent)
+            newScoresP += 1
+            scoreP.innerHTML=newScoresP
+        }else if (resultWhosWinner.textContent == 'Player 2 Win') {
+            newScoresC = parseInt(scoreC.textContent)
+            newScoresC += 1
+            scoreC.innerHTML=newScoresC
+        }else {
+        }
+        
+    }else{
     }
 }
 
@@ -97,7 +112,7 @@ function end() {
     countScores()
 }
 
-function resultWinner() {
+function resultWinnerSingleMode() {
     if (coloums[0].getAttribute('src') === 'assets/img/o.png' && coloums[1].getAttribute('src') === 'assets/img/o.png' && coloums[2].getAttribute('src') === 'assets/img/o.png') {
         resultWhosWinner.innerHTML='Player Win'
         end()
@@ -150,6 +165,59 @@ function resultWinner() {
     }
 }
 
+function resultWinnerMultiMode() {
+    if (coloums[0].getAttribute('src') === 'assets/img/o.png' && coloums[1].getAttribute('src') === 'assets/img/o.png' && coloums[2].getAttribute('src') === 'assets/img/o.png') {
+        resultWhosWinner.innerHTML='Player 1 Win'
+        end()
+    }else if (coloums[3].getAttribute('src') === 'assets/img/o.png' && coloums[4].getAttribute('src') === 'assets/img/o.png' && coloums[5].getAttribute('src') === 'assets/img/o.png') {
+        resultWhosWinner.innerHTML='Player 1 Win'
+        end()
+    }else if (coloums[6].getAttribute('src') === 'assets/img/o.png' && coloums[7].getAttribute('src') === 'assets/img/o.png' && coloums[8].getAttribute('src') === 'assets/img/o.png') {
+        resultWhosWinner.innerHTML='Player 1 Win'
+        end()
+    }else if (coloums[0].getAttribute('src') === 'assets/img/o.png' && coloums[3].getAttribute('src') === 'assets/img/o.png' && coloums[6].getAttribute('src') === 'assets/img/o.png') {
+        resultWhosWinner.innerHTML='Player 1 Win'
+        end()
+    }else if (coloums[1].getAttribute('src') === 'assets/img/o.png' && coloums[4].getAttribute('src') === 'assets/img/o.png' && coloums[7].getAttribute('src') === 'assets/img/o.png') {
+        resultWhosWinner.innerHTML='Player 1 Win'
+        end()
+    }else if (coloums[2].getAttribute('src') === 'assets/img/o.png' && coloums[5].getAttribute('src') === 'assets/img/o.png' && coloums[8].getAttribute('src') === 'assets/img/o.png') {
+        resultWhosWinner.innerHTML='Player 1 Win'
+        end()
+    }else if (coloums[0].getAttribute('src') === 'assets/img/o.png' && coloums[4].getAttribute('src') === 'assets/img/o.png' && coloums[8].getAttribute('src') === 'assets/img/o.png') {
+        resultWhosWinner.innerHTML='Player 1 Win'
+        end()
+    }else if (coloums[2].getAttribute('src') === 'assets/img/o.png' && coloums[4].getAttribute('src') === 'assets/img/o.png' && coloums[6].getAttribute('src') === 'assets/img/o.png') {
+        resultWhosWinner.innerHTML='Player 1 Win'
+        end()
+    }else if (coloums[0].getAttribute('src') === 'assets/img/x.png' && coloums[1].getAttribute('src') === 'assets/img/x.png' && coloums[2].getAttribute('src') === 'assets/img/x.png') {      
+        resultWhosWinner.innerHTML='Player 2 Win'
+        end()
+    }else if (coloums[3].getAttribute('src') === 'assets/img/x.png' && coloums[4].getAttribute('src') === 'assets/img/x.png' && coloums[5].getAttribute('src') === 'assets/img/x.png') {
+        resultWhosWinner.innerHTML='Player 2 Win'
+        end()
+    }else if (coloums[6].getAttribute('src') === 'assets/img/x.png' && coloums[7].getAttribute('src') === 'assets/img/x.png' && coloums[8].getAttribute('src') === 'assets/img/x.png') {
+        resultWhosWinner.innerHTML='Player 2 Win'
+        end()
+    }else if (coloums[0].getAttribute('src') === 'assets/img/x.png' && coloums[3].getAttribute('src') === 'assets/img/x.png' && coloums[6].getAttribute('src') === 'assets/img/x.png') {
+        resultWhosWinner.innerHTML='Player 2 Win'
+        end()
+    }else if (coloums[1].getAttribute('src') === 'assets/img/x.png' && coloums[4].getAttribute('src') === 'assets/img/x.png' && coloums[7].getAttribute('src') === 'assets/img/x.png') {
+        resultWhosWinner.innerHTML='Player 2 Win'
+        end()
+    }else if (coloums[2].getAttribute('src') === 'assets/img/x.png' && coloums[5].getAttribute('src') === 'assets/img/x.png' && coloums[8].getAttribute('src') === 'assets/img/x.png') {
+        resultWhosWinner.innerHTML='Player 2 Win'
+        end()
+    }else if (coloums[0].getAttribute('src') === 'assets/img/x.png' && coloums[4].getAttribute('src') === 'assets/img/x.png' && coloums[8].getAttribute('src') === 'assets/img/x.png') {
+        resultWhosWinner.innerHTML='Player 2 Win'
+        end()
+    }else if (coloums[2].getAttribute('src') === 'assets/img/x.png' && coloums[4].getAttribute('src') === 'assets/img/x.png' && coloums[6].getAttribute('src') === 'assets/img/x.png') {
+        resultWhosWinner.innerHTML='Player 2 Win'
+        end()
+    }else{
+    }
+}
+
 function botTurn() {
     if (hContain.textContent == 'Single Player') {
         whosTurn.innerHTML = 'Your Turn'
@@ -190,34 +258,67 @@ function botTurn() {
     }
 }
 
-coloums.forEach(function (coloum) {
-    coloum.addEventListener('click', function (e) {
-        if (e.target.getAttribute('id') !== 'done') {
-            e.target.setAttribute('id','done')
-            e.target.setAttribute('src', 'assets/img/o.png')
-            e.target.classList.remove('op0')
-
+    coloums.forEach(function (coloum) {
+        coloum.addEventListener('click', function (e) {
+            
             if (hContain.textContent == 'Single Player') {
-                whosTurn.innerHTML = 'Com Turn'
+                if (e.target.getAttribute('id') !== 'done') {
+                    e.target.setAttribute('id','done')
+                    e.target.setAttribute('src', 'assets/img/o.png')
+                    e.target.classList.remove('op0')
+                    whosTurn.innerHTML = 'Com Turn'
+        
+                    resultWinnerSingleMode()
+        
+                    gameOver.classList.remove('displayNone')
+                    let botTurnTime = Math.round(Math.random()*10000)
+                    setTimeout(botTurn,botTurnTime)
+        
+                }else {
+        
+                }
+            }else if (hContain.textContent == 'Multiplayer') {
+                if (e.target.getAttribute('id') !== 'done') {
+                    e.target.setAttribute('id','done')
+                    let countTurn = 0
+                    for (let i = 0; i < coloums.length; i++) {
+                        if (coloums[i].getAttribute('id') == 'done') {
+                            countTurn += 1
+                            if (countTurn == 8) {
+                                if (resultGame.getAttribute('class') == 'resultGame displayNone') {
+                                    resultWhosWinner.innerHTML = 'Draw'
+                                    end()
+                                }
+                            }
+                            if (countTurn % 2 == 1) {
+                                e.target.setAttribute('src','assets/img/o.png')
+                                whosTurn.innerHTML = 'Player 2 turn'
+                            }else if (countTurn % 2 == 0) {
+                                e.target.setAttribute('src','assets/img/x.png')
+                                whosTurn.innerHTML = 'Player 1 turn'
+                            }
+                        }
+                    }
+                    e.target.classList.remove('op0')
+    
+        
+                    resultWinnerMultiMode()
+        
+                }else {
+        
+                }
             }else{
-                whosTurn.innerHTML = 'Player 2 turn'
+            
             }
-
-            resultWinner()
-
-            gameOver.classList.remove('displayNone')
-            let botTurnTime = Math.round(Math.random()*10000)
-            setTimeout(botTurn,botTurnTime)
-
-        }else {
-
-        }
+        })
     })
-})
+
+
+
 
 reset.addEventListener('click', function (e) {
     clearAll()
-    if (hContain.textContent = 'Single Player') {
+    if (hContain.textContent == 'Single Player') {
         whosTurn.innerHTML = 'Your turn'
     }else{
         whosTurn.innerHTML = 'Player 1 turn'
