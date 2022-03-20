@@ -89,7 +89,7 @@
     }
 
     .contain h1 {
-        font-size: 80px;
+        font-size: 50px;
         color: #71DFE7;
     }
 
@@ -102,7 +102,7 @@
     }
 
     .score span {
-        font-family: 20px;
+        font-size: 20px;
         color: #71DFE7;
     }
 
@@ -162,7 +162,7 @@
     }
 
     .chooseMode h1 {
-        font-size: 80px;
+        font-size: 50px;
         color: #71DFE7;
     }
 
@@ -369,13 +369,908 @@
 
 }
 
-@media(max-width:1023px) {
+@media(max-width:1023px) and (min-width:768px) {
+    .attentionForMobileUser {
+        display: none;
+    }
+    
+
+    .container {
+        height: 100vh;
+        background-color: #009DAE;
+    }
+
+    .contain {
+        height: 100vh;
+        margin: auto;
+        text-align: center;
+        padding-top: 10vh;
+    }
+
+    .contain h1 {
+        font-size: 50px;
+        color: #71DFE7;
+    }
+
+    .score {
+        width: 50%;
+        margin: 40px auto 30px auto;
+        display: flex;
+        justify-content:space-between;
+        text-align: center;
+    }
+
+    .score span {
+        font-size: 20px;
+        color: #71DFE7;
+    }
+
+    .contain table {
+        border-collapse: collapse;
+        margin: 0 auto 70px auto;
+    }
+
+    .contain table tr td {
+        width: 120px;
+        height: 120px;
+        cursor: pointer;
+    }
+    
+    .contain table tr:not(:last-child) td {
+        border-bottom: 5px solid #71DFE7;
+    }
+
+    .contain table tr td:not(:last-child) {
+        border-right: 5px solid #71DFE7;
+    }
+
+    .contain table tr td img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .contain button {
+        border: 0;
+        background-color: transparent;
+        font-size: 12px;
+        color: #71DFE7;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    .contain button:hover {
+        font-size: 15px;
+        color: white;
+        text-shadow: 0px 0px 2.5px white;
+    }
+
+    .chooseMode {
+        background-color: #009DAE;
+        height: 100vh;
+        margin: auto;
+        text-align: center;
+        padding-top: 150px;
+        position: relative;
+        z-index: 3;
+        margin-top: -100vh;
+        transition: 0.8s;
+    }
+
+    .slideMode {
+        margin-top: -200vh;
+    }
+
+    .chooseMode h1 {
+        font-size: 50px;
+        color: #71DFE7;
+    }
+
+    .chooseMode ul {
+        list-style: none;
+    }
+
+    .chooseMode ul li:not(:last-child) {
+        margin: 0 0 60px 0;
+    }
+
+    .chooseMode ul li:first-child{
+        padding-top: 80px;
+    }
+
+    .chooseMode ul li a {
+        font-size: 35px;
+        text-decoration: none;
+        color: #71DFE7;
+        transition: 0.5s ease-out;
+    }
+
+    .chooseMode ul li a:hover {
+        text-shadow: 0px 0px 3px white;
+
+    }
+
+    .reportPage {
+        position: fixed;
+        z-index: 5;
+        top: 0;
+        left: 55%;
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        color: #009DAE;
+        transition: 1s;
+    }
+
+    .reportPageSlide {
+        left: 95%;
+    }
+
+    .reportPageLeft {
+        width: 70px;
+        height: 70px;
+        padding: 10px;
+        position: relative;
+        z-index: 6;
+        margin-right: -2%;
+        margin-top: 40vh;
+        border: 5px double #71DFE7;
+        background-color: #009DAE;
+        border-radius: 25px;
+        transition: 0.5s;
+    }
+
+    .reportPageButtonHover:hover {
+        margin-left: -3%;
+    }
+
+    .reportPageLeft img {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: 1s;
+    }
+
+    .sidebarButtonRotate {
+        transform: rotate(180deg);
+    }
+
+    .reportPageRight {
+        width: 40%;
+        background-color: #C2FFF9;
+        border: 5px double #71DFE7;
+    }
+
+    .reportPageRight h1 {
+        margin-top: 10vh;
+        font-size: 50px;
+        margin-bottom: 3vh;
+    }
+
+    .reportPageRight span {
+        font-size: 15px;
+    }
+
+    .reportPageRight ul{
+        list-style: none;
+    }
+
+    .reportPageRight ul li {
+        margin-top: 5vh;
+    }
+
+    .reportPageRight ul li:first-child {
+        margin-top: 10vh;
+    }
+
+    .reportPageRight ul li:last-child {
+        margin-top: 40vh;
+        font-size: 10px;
+    }
+
+    .reportPageRight ul li a {
+        text-decoration: none;
+        color: #009DAE;
+        font-size: 25px;
+        transition: 0.5s;
+    }
+
+    .reportPageRight ul li a:hover{
+        color: white;
+        text-shadow: 0px 0px 15px white;
+    }
+
+    .menu {
+        width: 40px;
+        height: 40px;
+        position: fixed;
+        left: 4%;
+        top: 7vh;
+    }
+
+    .menu img{
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+    }
+
+    .menu img:hover {
+        opacity: 80%;
+        width: 55px;
+    }
+
+    .resultGame {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.466);
+        transition: 1s;
+    }
+
+    .result {
+        margin: auto;
+        margin-top: 25vh;
+        height: 50vh;
+        padding: 10vh 0 10vh 0;
+        width: 50%;
+        background-color: #C2FFF9;
+        text-align: center;
+        border: 5px double #71DFE7;
+        border-radius: 30px;
+        color: #009DAE;
+    }
+
+    .result ul {
+        list-style: none;
+    }
+
+    .result ul li:not(:first-child) {
+        margin-top: 8vh;
+    }
+
+    .result ul li h1 {
+        font-size: 50px;
+    }
+
+    .result span {
+        font-size: 20px;
+    }
+
+    .result button {
+        padding: 10px 20px 10px 20px;
+        background-color: #009DAE;
+        border: 0;
+        border-radius: 20px;
+        font-size: 15px;
+        color: white;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    .result button:hover {
+        border: 1px solid #009DAE;
+        color: #009DAE;
+        background-color: transparent;
+    }
+
+    .gameOver {
+        width: 100%;
+        height: 450px;
+        margin-top: 20vh;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        opacity: 0;
+    }
+}
+
+@media(max-width:767px) and (min-width:640px) {
+    .attentionForMobileUser {
+        display: none;
+    }
+    
+
+    .container {
+        height: 100vh;
+        background-color: #009DAE;
+    }
+
+    .contain {
+        height: 100vh;
+        margin: auto;
+        text-align: center;
+        padding-top: 10vh;
+    }
+
+    .contain h1 {
+        font-size: 50px;
+        color: #71DFE7;
+    }
+
+    .score {
+        width: 50%;
+        margin: 40px auto 30px auto;
+        display: flex;
+        justify-content:space-between;
+        text-align: center;
+    }
+
+    .score span {
+        font-size: 20px;
+        color: #71DFE7;
+    }
+
+    .contain table {
+        border-collapse: collapse;
+        margin: 0 auto 70px auto;
+    }
+
+    .contain table tr td {
+        width: 120px;
+        height: 120px;
+        cursor: pointer;
+    }
+    
+    .contain table tr:not(:last-child) td {
+        border-bottom: 5px solid #71DFE7;
+    }
+
+    .contain table tr td:not(:last-child) {
+        border-right: 5px solid #71DFE7;
+    }
+
+    .contain table tr td img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .contain button {
+        border: 0;
+        background-color: transparent;
+        font-size: 12px;
+        color: #71DFE7;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    .contain button:hover {
+        font-size: 15px;
+        color: white;
+        text-shadow: 0px 0px 2.5px white;
+    }
+
+    .chooseMode {
+        background-color: #009DAE;
+        height: 100vh;
+        margin: auto;
+        text-align: center;
+        padding-top: 150px;
+        position: relative;
+        z-index: 3;
+        margin-top: -100vh;
+        transition: 0.8s;
+    }
+
+    .slideMode {
+        margin-top: -200vh;
+    }
+
+    .chooseMode h1 {
+        font-size: 50px;
+        color: #71DFE7;
+    }
+
+    .chooseMode ul {
+        list-style: none;
+    }
+
+    .chooseMode ul li:not(:last-child) {
+        margin: 0 0 60px 0;
+    }
+
+    .chooseMode ul li:first-child{
+        padding-top: 80px;
+    }
+
+    .chooseMode ul li a {
+        font-size: 35px;
+        text-decoration: none;
+        color: #71DFE7;
+        transition: 0.5s ease-out;
+    }
+
+    .chooseMode ul li a:hover {
+        text-shadow: 0px 0px 3px white;
+
+    }
+
+    .reportPage {
+        position: fixed;
+        z-index: 5;
+        top: 0;
+        left: 53%;
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        color: #009DAE;
+        transition: 1s;
+    }
+
+    .reportPageSlide {
+        left: 95%;
+    }
+
+    .reportPageLeft {
+        width: 70px;
+        height: 70px;
+        padding: 10px;
+        position: relative;
+        z-index: 6;
+        margin-right: -2%;
+        margin-top: 40vh;
+        border: 5px double #71DFE7;
+        background-color: #009DAE;
+        border-radius: 25px;
+        transition: 0.5s;
+    }
+
+    .reportPageButtonHover:hover {
+        margin-left: -3%;
+    }
+
+    .reportPageLeft img {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: 1s;
+    }
+
+    .sidebarButtonRotate {
+        transform: rotate(180deg);
+    }
+
+    .reportPageRight {
+        width: 40%;
+        background-color: #C2FFF9;
+        border: 5px double #71DFE7;
+    }
+
+    .reportPageRight h1 {
+        margin-top: 10vh;
+        font-size: 50px;
+        margin-bottom: 3vh;
+    }
+
+    .reportPageRight span {
+        font-size: 15px;
+    }
+
+    .reportPageRight ul{
+        list-style: none;
+    }
+
+    .reportPageRight ul li {
+        margin-top: 5vh;
+    }
+
+    .reportPageRight ul li:first-child {
+        margin-top: 10vh;
+    }
+
+    .reportPageRight ul li:last-child {
+        margin-top: 40vh;
+        font-size: 10px;
+    }
+
+    .reportPageRight ul li a {
+        text-decoration: none;
+        color: #009DAE;
+        font-size: 25px;
+        transition: 0.5s;
+    }
+
+    .reportPageRight ul li a:hover{
+        color: white;
+        text-shadow: 0px 0px 15px white;
+    }
+
+    .menu {
+        width: 40px;
+        height: 40px;
+        position: fixed;
+        left: 4%;
+        top: 7vh;
+    }
+
+    .menu img{
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+    }
+
+    .menu img:hover {
+        opacity: 80%;
+        width: 55px;
+    }
+
+    .resultGame {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.466);
+        transition: 1s;
+    }
+
+    .result {
+        margin: auto;
+        margin-top: 25vh;
+        height: 50vh;
+        padding: 10vh 0 10vh 0;
+        width: 50%;
+        background-color: #C2FFF9;
+        text-align: center;
+        border: 5px double #71DFE7;
+        border-radius: 30px;
+        color: #009DAE;
+    }
+
+    .result ul {
+        list-style: none;
+    }
+
+    .result ul li:not(:first-child) {
+        margin-top: 8vh;
+    }
+
+    .result ul li h1 {
+        font-size: 50px;
+    }
+
+    .result span {
+        font-size: 20px;
+    }
+
+    .result button {
+        padding: 10px 20px 10px 20px;
+        background-color: #009DAE;
+        border: 0;
+        border-radius: 20px;
+        font-size: 15px;
+        color: white;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    .result button:hover {
+        border: 1px solid #009DAE;
+        color: #009DAE;
+        background-color: transparent;
+    }
+
+    .gameOver {
+        width: 100%;
+        height: 500px;
+        margin-top: 20vh;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        opacity: 0;
+    }
+}
+
+@media(max-width:639px) and (min-width:320px) {
+    .attentionForMobileUser {
+        display: none;
+    }
+    
+
+    .container {
+        height: 100vh;
+        background-color: #009DAE;
+    }
+
+    .contain {
+        height: 100vh;
+        margin: auto;
+        text-align: center;
+        padding-top: 10vh;
+    }
+
+    .contain h1 {
+        font-size: 30px;
+        color: #71DFE7;
+    }
+
+    .score {
+        width: 50%;
+        margin: 40px auto 30px auto;
+        display: flex;
+        justify-content:space-between;
+        text-align: center;
+    }
+
+    .score span {
+        font-size: 15px;
+        color: #71DFE7;
+    }
+
+    .contain table {
+        border-collapse: collapse;
+        margin: 0 auto 70px auto;
+    }
+
+    .contain table tr td {
+        width: 60px;
+        height: 60px;
+        cursor: pointer;
+    }
+    
+    .contain table tr:not(:last-child) td {
+        border-bottom: 5px solid #71DFE7;
+    }
+
+    .contain table tr td:not(:last-child) {
+        border-right: 5px solid #71DFE7;
+    }
+
+    .contain table tr td img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .contain button {
+        border: 0;
+        background-color: transparent;
+        font-size: 12px;
+        color: #71DFE7;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    .contain button:hover {
+        font-size: 15px;
+        color: white;
+        text-shadow: 0px 0px 2.5px white;
+    }
+
+    .chooseMode {
+        background-color: #009DAE;
+        height: 100vh;
+        margin: auto;
+        text-align: center;
+        padding-top: 150px;
+        position: relative;
+        z-index: 3;
+        margin-top: -100vh;
+        transition: 0.8s;
+    }
+
+    .slideMode {
+        margin-top: -200vh;
+    }
+
+    .chooseMode h1 {
+        font-size: 30px;
+        color: #71DFE7;
+    }
+
+    .chooseMode ul {
+        list-style: none;
+    }
+
+    .chooseMode ul li:not(:last-child) {
+        margin: 0 0 60px 0;
+    }
+
+    .chooseMode ul li:first-child{
+        padding-top: 80px;
+    }
+
+    .chooseMode ul li a {
+        font-size: 20px;
+        text-decoration: none;
+        color: #71DFE7;
+        transition: 0.5s ease-out;
+    }
+
+    .chooseMode ul li a:hover {
+        text-shadow: 0px 0px 3px white;
+
+    }
+
+    .reportPage {
+        position: fixed;
+        z-index: 5;
+        top: 0;
+        left: 45%;
+        display: flex;
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        color: #009DAE;
+        transition: 1s;
+    }
+
+    .reportPageSlide {
+        left: 95%;
+    }
+
+    .reportPageLeft {
+        width: 40px;
+        height: 40px;
+        padding: 5px;
+        position: relative;
+        z-index: 6;
+        margin-right: -2%;
+        margin-top: 40vh;
+        border: 5px double #71DFE7;
+        background-color: #009DAE;
+        border-radius: 15px;
+        transition: 0.5s;
+    }
+
+    .reportPageButtonHover:hover {
+        margin-left: -7%;
+    }
+
+    .reportPageLeft img {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        transition: 1s;
+    }
+
+    .sidebarButtonRotate {
+        transform: rotate(180deg);
+    }
+
+    .reportPageRight {
+        width: 50%;
+        background-color: #C2FFF9;
+        border: 5px double #71DFE7;
+    }
+
+    .reportPageRight h1 {
+        margin-top: 10vh;
+        font-size: 30px;
+        margin-bottom: 3vh;
+    }
+
+    .reportPageRight span {
+        font-size: 10px;
+    }
+
+    .reportPageRight ul{
+        list-style: none;
+    }
+
+    .reportPageRight ul li {
+        margin-top: 5vh;
+    }
+
+    .reportPageRight ul li:first-child {
+        margin-top: 10vh;
+    }
+
+    .reportPageRight ul li:last-child {
+        margin-top: 40vh;
+        font-size: 10px;
+    }
+
+    .reportPageRight ul li a {
+        text-decoration: none;
+        color: #009DAE;
+        font-size: 15px;
+        transition: 0.5s;
+    }
+
+    .reportPageRight ul li a:hover{
+        color: white;
+        text-shadow: 0px 0px 15px white;
+    }
+
+    .menu {
+        width: 30px;
+        height: 30px;
+        position: fixed;
+        left: 4%;
+        top: 11vh;
+    }
+
+    .menu img{
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        transition: 0.5s ease-in-out;
+    }
+
+    .menu img:hover {
+        opacity: 80%;
+        width: 55px;
+    }
+
+    .resultGame {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        z-index: 2;
+        top: 0;
+        background-color: rgba(0, 0, 0, 0.466);
+        transition: 1s;
+    }
+
+    .result {
+        margin: auto;
+        margin-top: 25vh;
+        height: 50vh;
+        padding: 10vh 0 10vh 0;
+        width: 70%;
+        background-color: #C2FFF9;
+        text-align: center;
+        border: 5px double #71DFE7;
+        border-radius: 30px;
+        color: #009DAE;
+    }
+
+    .result ul {
+        list-style: none;
+    }
+
+    .result ul li:not(:first-child) {
+        margin-top: 8vh;
+    }
+
+    .result ul li h1 {
+        font-size: 30px;
+    }
+
+    .result span {
+        font-size: 20px;
+    }
+
+    .result button {
+        padding: 10px 20px 10px 20px;
+        background-color: #009DAE;
+        border: 0;
+        border-radius: 20px;
+        font-size: 15px;
+        color: white;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    .result button:hover {
+        border: 1px solid #009DAE;
+        color: #009DAE;
+        background-color: transparent;
+    }
+
+    .gameOver {
+        width: 100%;
+        height: 300px;
+        margin-top: 20vh;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        opacity: 0;
+    }
+}
+
+
+@media(min-width:1px) and (max-width:319px) {
     .container {
         display: none;
     }
 
     .attentionForMobileUser {
-        padding: 20px;
+        padding: 10px;
         margin: auto;
         text-align: center;
         position: fixed;
@@ -387,15 +1282,13 @@
     }
 
     .attentionForMobileUser ul li h1 {
-        font-size: 20px;
+        font-size: 28px;
         color: slateblue;
         margin-bottom: 10px;
     }
 
     .attentionForMobileUser ul li span {
         color: slateblue;
-        font-size: 15px;
+        font-size: 21px;
     }
-
-
 }
